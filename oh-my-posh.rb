@@ -1,10 +1,10 @@
 class OhMyPosh < Formula
   desc "Prompt theme engine for any shell"
   homepage "https://ohmyposh.dev"
-  url "https://github.com/JanDeDobbeleer/oh-my-posh3/archive/v3.44.2.tar.gz"
-  sha256 "1ef27cb318716a9e57fa85ebc642e0ae7b0222762859821582ab58c003731eba"
+  url "https://github.com/JanDeDobbeleer/oh-my-posh3/archive/v3.44.3.tar.gz"
+  sha256 "b5667ced77222009d9f0f7885be7ff68284f089fc020e0bae3f0bdbf1f72b41b"
   license "GPL-3.0-only"
-  version "3.44.2"
+  version "3.44.3"
 
   depends_on "go" => :build
 
