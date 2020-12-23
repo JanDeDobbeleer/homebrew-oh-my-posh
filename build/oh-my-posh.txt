@@ -7,16 +7,21 @@ class OhMyPosh < Formula
   version "<VERSION>"
 
   depends_on "go" => :build
+  depends_on "go-bindata" => :build
 
   def install
-    system "go", "get", "-u", "github.com/kevinburke/go-bindata/..."
     system "go-bindata", "-o", "init.go", "init/"
-    system "go", "build", "-o", "oh-my-posh"
+    system "go", "build", "-o", "oh-my-posh", "-ldflags=\"-X 'main.Version=<VERSION>'\""
     bin.install "oh-my-posh"
     mv "themes", prefix
-    ohai "Thanks for installing Oh my Posh."
-    ohai "Have a look at https://ohmyposh.dev/docs/installation for detailed instructions for your shell."
-    ohai "Sample themes can be found at $(brew --prefix oh-my-posh)/themes."
+  end
+
+  def caveats
+    <<~EOS
+      Thanks for installing Oh my Posh.
+      Have a look at https://ohmyposh.dev/docs/installation for detailed instructions for your shell.
+      Sample themes can be found at $(brew --prefix oh-my-posh)/themes.
+    EOS
   end
 
   test do
