@@ -10,7 +10,8 @@ class OhMyPosh < Formula
   depends_on "go-bindata" => :build
 
   def install
-    system "go-bindata", "-o", "init.go", "init/"
+    system "cd", "src/"
+    system "go", "generate"
     system "go", "build", "-o", "oh-my-posh", "-ldflags=\"-X 'main.Version=<VERSION>'\""
     bin.install "oh-my-posh"
     mv "themes", prefix
