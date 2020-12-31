@@ -5,14 +5,15 @@ class OhMyPosh < Formula
   sha256 "5ac6b95498b165621e7aace320e782f6a85c3d65ba322c09081aae1b86ad5236"
   license "GPL-3.0-only"
   version "3.66.9"
+  revision 1
 
   depends_on "go" => :build
   depends_on "go-bindata" => :build
 
   def install
     Dir.chdir("src") do
-      system "go", "generate"
-      system "go", "build", "-o", "oh-my-posh", "-ldflags", "\"-X 'main.Version=3.66.9'\""
+      system("go generate")
+      system("go build -o=oh-my-posh -ldflags=\"-X \'main.Version=3.66.9\'\"")
       bin.install "oh-my-posh"
     end
     mv "themes", prefix

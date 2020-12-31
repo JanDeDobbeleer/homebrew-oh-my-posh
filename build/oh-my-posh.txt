@@ -11,8 +11,8 @@ class OhMyPosh < Formula
 
   def install
     Dir.chdir("src") do
-      system "go", "generate"
-      system "go", "build", "-o", "oh-my-posh", "-ldflags", "\"-X 'main.Version=<VERSION>'\""
+      system("go generate")
+      system("go build -o=oh-my-posh -ldflags=\"-X \'main.Version=<VERSION>\'\"")
       bin.install "oh-my-posh"
     end
     mv "themes", prefix
