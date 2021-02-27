@@ -7,11 +7,9 @@ class OhMyPosh < Formula
   version "<VERSION>"
 
   depends_on "go" => :build
-  depends_on "go-bindata" => :build
 
   def install
     Dir.chdir("src") do
-      system("go generate")
       system("go build -o=oh-my-posh -ldflags=\"-X \'main.Version=<VERSION>\'\"")
       bin.install "oh-my-posh"
     end
