@@ -1,16 +1,16 @@
 class OhMyPosh < Formula
   desc "Prompt theme engine for any shell"
   homepage "https://ohmyposh.dev"
-  url "https://github.com/JanDeDobbeleer/oh-my-posh/archive/v3.111.0.tar.gz"
-  sha256 "a21c4e02d2f6a86e9f2f9b513cac98daec238c1482821ad3233b12580a1782b5"
+  url "https://github.com/JanDeDobbeleer/oh-my-posh/archive/v3.111.1.tar.gz"
+  sha256 "d9147ea28aebe1e2ca43f8ac9b1704e80a5d89c0abd9c8131494556627fcc1d1"
   license "GPL-3.0-only"
-  version "3.111.0"
+  version "3.111.1"
 
   depends_on "go" => :build
 
   def install
     Dir.chdir("src") do
-      system("go build -o=oh-my-posh -ldflags=\"-X \'main.Version=3.111.0\'\"")
+      system("go build -o=oh-my-posh -ldflags=\"-X \'main.Version=3.111.1\'\"")
       bin.install "oh-my-posh"
     end
     mv "themes", prefix
