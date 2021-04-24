@@ -21,6 +21,13 @@ class OhMyPosh < Formula
       Thanks for installing Oh my Posh.
       Have a look at https://ohmyposh.dev/docs/installation for detailed instructions for your shell.
       Sample themes can be found at $(brew --prefix oh-my-posh)/themes.
+
+      If you're enjoying Oh my Posh, feel free to donate or become a sponsor.
+      https://github.com/sponsors/JanDeDobbeleer
+
+      Don't have anything to spare but still consider doing something?
+      Nominating me as a Github Star can help as well!
+      https://stars.github.com/nominate/
     EOS
   end
 
