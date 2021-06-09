@@ -1,16 +1,16 @@
 class OhMyPosh < Formula
   desc "Prompt theme engine for any shell"
   homepage "https://ohmyposh.dev"
-  url "https://github.com/JanDeDobbeleer/oh-my-posh/archive/v3.162.3.tar.gz"
-  sha256 "277a2434e61269295bf7ade34fae9f0c9ac57d940980ce3a76828bcc93dc0156"
+  url "https://github.com/JanDeDobbeleer/oh-my-posh/archive/v3.162.4.tar.gz"
+  sha256 "e1127493a81ea0123b3e54c4eaabe8d3f67e870dde73147e4c377cde9af23804"
   license "GPL-3.0-only"
-  version "3.162.3"
+  version "3.162.4"
 
   depends_on "go@1.16" => :build
 
   def install
     Dir.chdir("src") do
-      system("go build -o=oh-my-posh -ldflags=\"-X \'main.Version=3.162.3\'\"")
+      system("go build -o=oh-my-posh -ldflags=\"-X \'main.Version=3.162.4\'\"")
       bin.install "oh-my-posh"
     end
     mv "themes", prefix
@@ -19,7 +19,7 @@ class OhMyPosh < Formula
   def caveats
     <<~EOS
       Thanks for installing Oh my Posh.
-      Have a look at https://ohmyposh.dev/docs/installation for detailed instructions for your shell.
+      Have a look at https://ohmyposh.dev/docs/macos for detailed instructions for your shell.
       Sample themes can be found at $(brew --prefix oh-my-posh)/themes.
 
       If you're enjoying Oh my Posh, feel free to donate or become a sponsor.
