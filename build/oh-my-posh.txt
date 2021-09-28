@@ -24,10 +24,6 @@ class OhMyPosh < Formula
 
       If you're enjoying Oh my Posh, feel free to donate or become a sponsor.
       https://github.com/sponsors/JanDeDobbeleer
-
-      Don't have anything to spare but still consider doing something?
-      Nominating me as a Github Star can help as well!
-      https://stars.github.com/nominate/
     EOS
   end
 
