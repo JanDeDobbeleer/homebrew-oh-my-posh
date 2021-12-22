@@ -1,0 +1,40 @@
+name: Metrics
+on:
+  schedule:
+    - cron: "0 1 * * *"
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Node ⬇️
+      uses: actions/setup-node@v2
+      with:
+        node-version: 17
+    - name: Install dependencies ⚙️
+      run: npm install applicationinsights
+    - name: Fetch repo clones and report 📈
+      uses: actions/github-script@v5
+      env:
+        APPINSIGHTS_INSTRUMENTATIONKEY: ${{ secrets.APPINSIGHTS_INSTRUMENTATIONKEY }}
+      with:
+        github-token: ${{ secrets.GH_PAT }}
+        script: |
+          let appInsights = require('applicationinsights');
+          appInsights.setup();
+
+          clones = await github.rest.repos.getClones({
+            owner: 'jandedobbeleer',
+            repo: 'homebrew-oh-my-posh'
+          });
+          const isSameDay = (first, second) =>
+            first.getFullYear() === second.getFullYear() &&
+            first.getMonth() === second.getMonth() &&
+            first.getDate() === second.getDate();
+          const parseDate = (timestamp) => new Date(Date.parse(timestamp));
+          const yesterday = ( d => new Date(d.setDate(d.getDate()-1)) )(new Date);
+          yesterday_clones = clones.data.clones.find(clone => isSameDay(yesterday, parseDate(clone.timestamp)));
+          let client = appInsights.defaultClient;
+          client.trackMetric({name: "homebrew installs", value: yesterday_clones.uniques});
+          console.log(yesterday_clones.uniques);
+
