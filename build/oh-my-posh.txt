@@ -4,10 +4,10 @@ class OhMyPosh < Formula
   url "https://github.com/JanDeDobbeleer/oh-my-posh/archive/v<VERSION>.tar.gz"
   head "https://github.com/JanDeDobbeleer/oh-my-posh.git", branch: "main"
   sha256 "<SHA256>"
-  license "GPL-3.0-only"
+  license "MIT"
   version "<VERSION>"
 
-  depends_on "go@1.17" => :build
+  depends_on "go@1.18" => :build
 
   def install
     Dir.chdir("src") do
