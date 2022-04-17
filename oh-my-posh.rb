@@ -6,11 +6,13 @@ class OhMyPosh < Formula
   sha256 "49ec9a365ebfa807451c2cde15c246ae9e1ba254a1ea1d64f19d452017a89289"
   license "MIT"
   version "7.64.1"
+  revision 1
 
   depends_on "go@1.18" => :build
 
   def install
     Dir.chdir("src") do
+      ENV["GOPROXY"] = ENV.has_key?("HOMEBREW_GOPROXY") ? ENV["HOMEBREW_GOPROXY"] : ""
       system("go build -o=oh-my-posh -ldflags=\"-s -w -X \'main.Version=7.64.1\'\"")
       bin.install "oh-my-posh"
     end
@@ -32,4 +34,3 @@ class OhMyPosh < Formula
     system "#{bin}/oh-my-posh", "--help"
   end
 end
-

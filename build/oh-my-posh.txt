@@ -11,6 +11,7 @@ class OhMyPosh < Formula
 
   def install
     Dir.chdir("src") do
+      ENV["GOPROXY"] = ENV.has_key?("HOMEBREW_GOPROXY") ? ENV["HOMEBREW_GOPROXY"] : ""
       system("go build -o=oh-my-posh -ldflags=\"-s -w -X \'main.Version=<VERSION>\'\"")
       bin.install "oh-my-posh"
     end
