@@ -3,7 +3,7 @@ class OhMyPosh < Formula
   homepage "https://ohmyposh.dev"
   url "https://github.com/JanDeDobbeleer/oh-my-posh/archive/v12.6.1.tar.gz"
   head "https://github.com/JanDeDobbeleer/oh-my-posh.git", branch: "main"
-  sha256 "e304d68d37c13eadf9b1123bba26e9fea49c095cedf3e4c42166822292f62267"
+  sha256 "f5b2230a98bb70baada6c0793a2c9620ec0ebb2065cfe56e8d1fec5a3da6546f"
   license "MIT"
   version "12.6.1"
 
