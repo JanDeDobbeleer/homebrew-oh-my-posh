@@ -6,6 +6,7 @@ class OhMyPosh < Formula
   sha256 "2afb623fb2ac6b7d5a072e877456f44bc7701a1403983a4541e1e35e43ab8956"
   license "MIT"
   version "12.28.2"
+  revision 1
 
   depends_on "go@1.19" => :build
 
@@ -20,12 +21,15 @@ class OhMyPosh < Formula
 
   def caveats
     <<~EOS
-      Thanks for installing Oh my Posh.
+      Thanks for installing Oh My Posh.
       Have a look at https://ohmyposh.dev/docs/ for detailed instructions for your shell.
       Sample themes can be found at $(brew --prefix oh-my-posh)/themes.
 
-      If you're enjoying Oh my Posh, feel free to donate or become a sponsor.
+      If you're enjoying Oh My Posh, feel free to donate or become a sponsor.
       https://github.com/sponsors/JanDeDobbeleer
+
+      In case you're looking for help, want to share how you use Oh My Posh, or find like-minded individuals, join our Discord community!
+      https://discord.gg/n7E3DkXssv
     EOS
   end
 
