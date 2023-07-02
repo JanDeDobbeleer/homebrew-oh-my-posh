@@ -11,5 +11,6 @@ $hash = $fileHash.Hash.ToLower()
 Remove-Item -Path "v$Version.tar.gz"
 $content = Get-Content './oh-my-posh.txt' -Raw
 $content = $content.Replace('<VERSION>', $Version)
+$content = $content.Replace('<DATE>', (Get-Date -Format "yyyy-MM-ddTHH:mm:ssZ" -AsUTC))
 $content = $content.Replace('<SHA256>', $hash)
 $content | Out-File -Encoding 'UTF8' '../oh-my-posh.rb'
