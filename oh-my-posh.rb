@@ -1,18 +1,18 @@
 class OhMyPosh < Formula
   desc "Prompt theme engine for any shell"
   homepage "https://ohmyposh.dev"
-  url "https://github.com/JanDeDobbeleer/oh-my-posh/archive/v21.23.5.tar.gz"
+  url "https://github.com/JanDeDobbeleer/oh-my-posh/archive/v21.23.6.tar.gz"
   head "https://github.com/JanDeDobbeleer/oh-my-posh.git", branch: "main"
-  sha256 "33714a6c746d16521452aa5d45a0da14e0c7df9e29cb995c7dcabb4affbe6780"
+  sha256 "4d2468dacc4f3b488023d6ea8514c66aee61f78c1e5b0d39d52a9425e4cfb32e"
   license "MIT"
-  version "21.23.5"
+  version "21.23.6"
 
   depends_on "go@1.22" => :build
 
   def install
     Dir.chdir("src") do
       ENV["GOPROXY"] = ENV.has_key?("HOMEBREW_GOPROXY") ? ENV["HOMEBREW_GOPROXY"] : ""
-      system("go build -o=oh-my-posh -ldflags=\"-s -w -X \'github.com/jandedobbeleer/oh-my-posh/src/build.Version=21.23.5\' -X \'github.com/jandedobbeleer/oh-my-posh/src/build.Date=2024-07-11T17:49:07Z\'\"")
+      system("go build -o=oh-my-posh -ldflags=\"-s -w -X \'github.com/jandedobbeleer/oh-my-posh/src/build.Version=21.23.6\' -X \'github.com/jandedobbeleer/oh-my-posh/src/build.Date=2024-07-11T19:00:51Z\'\"")
       bin.install "oh-my-posh"
     end
     mv "themes", prefix
