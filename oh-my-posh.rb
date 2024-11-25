@@ -3,7 +3,7 @@ class OhMyPosh < Formula
   homepage "https://ohmyposh.dev"
   url "https://github.com/JanDeDobbeleer/oh-my-posh/archive/v24.9.0.tar.gz"
   head "https://github.com/JanDeDobbeleer/oh-my-posh.git", branch: "main"
-  sha256 "2c6ae4231fa0298b1dac43898212b18abe2efa3c21ed4d9d7490aa8c4d76e162"
+  sha256 "3b9844ff2558f1ad8eaf5cecf3f451f31b6308f68f91eb4b1b5056ec61e9a583"
   license "MIT"
   version "24.9.0"
 
@@ -12,7 +12,7 @@ class OhMyPosh < Formula
   def install
     Dir.chdir("src") do
       ENV["GOPROXY"] = ENV.has_key?("HOMEBREW_GOPROXY") ? ENV["HOMEBREW_GOPROXY"] : ""
-      system("go build -o=oh-my-posh -ldflags=\"-s -w -X \'github.com/jandedobbeleer/oh-my-posh/src/build.Version=24.9.0\' -X \'github.com/jandedobbeleer/oh-my-posh/src/build.Date=2024-11-25T07:28:39Z\'\"")
+      system("go build -o=oh-my-posh -ldflags=\"-s -w -X \'github.com/jandedobbeleer/oh-my-posh/src/build.Version=24.9.0\' -X \'github.com/jandedobbeleer/oh-my-posh/src/build.Date=2024-11-25T08:33:58Z\'\"")
       bin.install "oh-my-posh"
     end
     mv "themes", prefix
