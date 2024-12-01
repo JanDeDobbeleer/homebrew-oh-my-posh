@@ -2,11 +2,11 @@ cask "oh-my-posh" do
     desc "Prompt theme engine for any shell"
     homepage "https://ohmyposh.dev"
     arch arm: "arm64", intel: "amd64"
-    version "24.11.2"
+    version "24.11.3"
     url "https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v#{version}/posh-darwin-#{arch}",
         verified: "github.com/JanDeDobbeleer/oh-my-posh/"
-    sha256 arm:   "d322053fae5c6b79a3fed4ac8ef58b1bbf400a0c85599a7fd6495d17fc7d6960",
-           intel: "1e9259f437b22cae4157f249cb1c1d7d20737a4a9d673b4ea7f3c6d1c75148f6"
+    sha256 arm:   "667aead16b0cef1188357ab2aae4d891d96b2d66a6a3ce3157dcc714e35dd9b7",
+           intel: "480bc1f94bcc8d0b932c41e14ede7e4fd66a7fbaf0eb8f00eb2da5d5866673fd"
     name "oh-my-posh"
     binary "posh-darwin-#{arch}", target: "oh-my-posh"
     auto_updates true
