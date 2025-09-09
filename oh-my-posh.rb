@@ -6,8 +6,9 @@ class OhMyPosh < Formula
   sha256 "017a4bc1224ba3e639872590f6962466c65584fe8d0850a9d6fc7b940e4468ad"
   license "MIT"
   version "26.21.0"
+  revision 1
 
-  depends_on "go@1.24" => :build
+  depends_on "go@1.25" => :build
 
   def install
     Dir.chdir("src") do
