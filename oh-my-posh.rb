@@ -7,7 +7,7 @@ class OhMyPosh < Formula
   license "MIT"
   version "29.3.0"
 
-  depends_on "go@1.25" => :build
+  depends_on "go" => :build
 
   def install
     Dir.chdir("src") do
