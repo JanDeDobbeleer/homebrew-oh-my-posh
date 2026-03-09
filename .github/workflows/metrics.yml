@@ -37,10 +37,18 @@ jobs:
           const yesterday = ( d => new Date(d.setDate(d.getDate()-1)) )(new Date);
 
           yesterday_clones = clones.data.clones.find(clone => isSameDay(yesterday, parseDate(clone.timestamp)));
-          console.log(yesterday_clones.uniques);
+
+          let uniques = 0;
+          if (yesterday_clones && typeof yesterday_clones.uniques === 'number') {
+            uniques = yesterday_clones.uniques;
+          } else {
+            console.log("No clone data found for yesterday. Defaulting uniques to 0.");
+          }
+
+          console.log(uniques);
 
           let client = appInsights.defaultClient;
-          client.trackMetric({name: "homebrew installs", value: yesterday_clones.uniques});
+          client.trackMetric({name: "homebrew installs", value: uniques});
 
 
 
