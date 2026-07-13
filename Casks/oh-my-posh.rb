@@ -1,15 +1,15 @@
 cask "oh-my-posh" do
     desc "Prompt theme engine for any shell"
     homepage "https://ohmyposh.dev"
-    version "29.26.1"
+    version "29.27.0"
     name "oh-my-posh"
 
     on_macos do
         arch arm: "arm64", intel: "amd64"
         url "https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v#{version}/posh-darwin-#{arch}",
             verified: "github.com/JanDeDobbeleer/oh-my-posh/"
-        sha256 arm:   "2dbb39a02c1c920a0249f21050ad24d6735f3aa33efbf1985dbf91a1e740c5cd",
-               intel: "38058b24b4e0e793e110d93bac2ed373fe3f0953b1f79f36d2367bfa7bf9c36a"
+        sha256 arm:   "028f7f47211dd66b8bc6ec6877d824bb2c8a773ec27f41be951bcf7022453bcd",
+               intel: "69c0470109096693bc267d3c8fe2ae288c11c5bbae5b01d0f512a034b5dd4dc8"
         binary "posh-darwin-#{arch}", target: "oh-my-posh"
     end
 
