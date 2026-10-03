@@ -6,8 +6,7 @@ cask "oh-my-posh" do
 
     on_macos do
         arch arm: "arm64", intel: "amd64"
-        url "https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v#{version}/posh-darwin-#{arch}",
-            verified: "github.com/JanDeDobbeleer/oh-my-posh/"
+        url "https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v#{version}/posh-darwin-#{arch}"
         sha256 arm:   "<SHA256-ARM>",
                intel: "<SHA256-INTEL>"
         binary "posh-darwin-#{arch}", target: "oh-my-posh"
